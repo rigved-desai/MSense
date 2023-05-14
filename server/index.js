@@ -12,8 +12,5 @@ spawn('python', ['modelapi/modelAPI.py']);
 
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
 
-app.get('/waah', (req, res) => {
-    res.send('ok')
-  })
 
 
