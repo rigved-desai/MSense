@@ -12,6 +12,7 @@
     "python-shell": "^5.0.0"
   },
   "scripts": {
+    "build": "node index.js",
     "dev": "nodemon -L index.js"
   }
 }
