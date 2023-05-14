@@ -8,13 +8,8 @@ const fileUploadRouter = require("./routes/fileUploadRouter");
 app.use(cors());
 app.use("/", fileUploadRouter);
 
-const lol = async() => {
-    await spawn('python', ['modelapi/modelAPI.py']);
-    await app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
-}
+spawn('python', ['modelapi/modelAPI.py']);
 
-lol();
-
-
+app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
 
 
