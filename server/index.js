@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express();
-const {PORT} = require('../server/config/config')
+const {PORT} = require('../server/config/config.js')
 const cors = require('cors');
 require('dotenv').config()
 const { spawn } = require('child_process');
