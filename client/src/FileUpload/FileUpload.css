@@ -1,0 +1,112 @@
+.title {
+  text-align: center;
+}
+
+.loading {
+  cursor: progress;
+  pointer-events: none;
+}
+
+/* Center the form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 400px;
+  max-width: 50%;
+  min-height: 10vh;
+  padding: 80px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 10px 5px rgb(0, 0, 0);
+  }
+  
+  /* Style the input file button */
+  #inputBtn {
+    padding: 10px;
+    font-size: 16px;
+    color: #000000;
+    background-color: #f6f1f1;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style the upload button */
+  #uploadBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    background-color: #E5E0FF;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  /* Style the success message */
+  #uploadForm {
+    margin-top: 50px;
+    padding: 50px;
+    padding-top: 70px;
+    font-size: 16px;
+    background-color: #7286D3;
+    border:solid #E5E0FF;
+    border-radius: 5px;
+    color: #ffffff;
+  }
+
+  #uploadBtn:hover {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 20);
+  }
+  
+  #uploadBtn:active {
+    background-color: #8EA7E9;
+    transform: translateX(2px) translateY(2px);
+  }
+
+
+  #result {
+    background-color: #8EA7E9;
+    color: black;
+    min-width: 400px;
+    max-width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 30px;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left:solid #E5E0FF;
+    border-right:solid #E5E0FF;
+    border-bottom:solid #E5E0FF;
+    box-shadow: 0px 0px 10px 5px rgb(0, 0, 0);
+    z-index: -1;
+  }
+
+  #section1 {
+    border-bottom: 1px solid black; 
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+
+ }
+ #section2 {
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 20px;
+
+}
+  .show-result {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .hide-result {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+  }
+
+  
