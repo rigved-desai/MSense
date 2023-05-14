@@ -13,15 +13,3 @@ app.use(cors());
 app.use("/", fileUploadRouter);
 
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
-
-modelAPI.stdout.on('data', (data) => {
-    console.log(`stdout: ${data}`);
-  });
-  
-  modelAPI.stderr.on('data', (data) => {
-    console.error(`stderr: ${data}`);
-  });
-  
-  modelAPI.on('close', (code) => {
-    console.log(`FastAPI server exited with code ${code}`);
-  });
