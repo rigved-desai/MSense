@@ -1,4 +1,6 @@
 [build]
-    base = "subdirectory"
   command = "pip install requirements.txt && npm install && node index.js"
-  publish = "public"
+  publish = "build"
+
+[build.environment]
+  CI = "false"
