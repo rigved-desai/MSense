@@ -5,10 +5,9 @@ const cors = require('cors');
 require('dotenv').config()
 const { spawn } = require('child_process');
 
-const modelAPI = spawn('python', ['modelAPI/modelAPI.py']);
+const modelAPI = spawn('python', ['modelapi/modelAPI.py']);
 
 const fileUploadRouter = require("./routes/fileUploadRouter");
-const { model } = require('@tensorflow/tfjs');
 
 app.use(cors());
 app.use("/", fileUploadRouter);
