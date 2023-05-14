@@ -13,7 +13,7 @@
     "python-shell": "^5.0.0"
   },
   "scripts": {
-    "build": "npm install",
+    "build": "pm2 start index.js",
     "dev": "nodemon -L index.js"
   }
 }
