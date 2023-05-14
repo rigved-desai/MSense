@@ -1,9 +1,3 @@
-<<<<<<< HEAD
 fastapi
 uvicorn
 pandas
-=======
-fastapi
-uvicorn
-pandas
->>>>>>> b6f0634d628edbedd8fd7215e3843756ee974e8c
