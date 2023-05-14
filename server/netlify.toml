@@ -1,6 +1,5 @@
 [build]
-  command = "npm install"
-  publish = "build"
+  command = "npm install && node index.js"
 
 [build.environment]
   CI = "false"
