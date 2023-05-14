@@ -5,7 +5,11 @@ const cors = require('cors');
 require('dotenv').config()
 const { spawn } = require('child_process');
 
-const modelAPI = await spawn('python', ['modelapi/modelAPI.py']);
+const lol = async() => {
+    await spawn('python', ['modelapi/modelAPI.py']);
+}
+
+lol();
 
 const fileUploadRouter = require("./routes/fileUploadRouter");
 
