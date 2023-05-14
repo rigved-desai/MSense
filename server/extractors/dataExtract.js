@@ -1,6 +1,6 @@
 const {PythonShell} = require('python-shell');
 const fs = require("fs");
-const {FEATURES} = require('../config/config')
+const {FEATURES} = require('../config/config.js')
 
 exports.PEExtractor = async(options) => {
     try {
