@@ -9,7 +9,7 @@ app.use("/", fileUploadRouter);
 
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
 
-aapp.get('/check', (req, res) => {
+app.get('/check', (req, res) => {
     res.json({ result: 'ok' });
 });
 
