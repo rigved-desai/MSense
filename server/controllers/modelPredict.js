@@ -4,7 +4,7 @@ const modelPort = process.env.MODELPORT || 5000;
 exports.predictResult = async(req, res, next) =>  {
     const featureValues = JSON.stringify(req.featureValues);
     // console.log(featureValues);
-    axios.post(`http://localhost:${modelPort}/predict`, featureValues)
+    axios.post(`https://msensemodelapi.onrender.com/predict`, featureValues)
         .then((response) => {
             let prediction = response.data.prediction;
             if(prediction == 1) return res.status(200).json({result: true, message: "File uploaded and processed successfully!", malware: false});
