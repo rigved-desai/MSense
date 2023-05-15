@@ -1,2 +1,0 @@
-SizeOfOptionalHeader;Characteristics;MajorLinkerVersion;MinorLinkerVersion;SizeOfCode;SizeOfInitializedData;SizeOfUninitializedData;AddressOfEntryPoint;BaseOfCode;BaseOfData;ImageBase;SectionAlignment;FileAlignment;MajorOperatingSystemVersion
-332;224;263;2;28;26624;49152;512;4832;4096;32768;4194304.000000;4096;512;4

@@ -938,7 +938,7 @@ class pefile:
         pass
 
     def printInfo(self):
-        print("%s" % (self.peDict['01_machine']))
+        # print("%s" % (self.peDict['01_machine']))
         print("%s" % (self.peDict['06_sizeoptheader']))
         print("%s" % (int(self.peDict['07_chars'], 2)))
         print("%s" % (self.peoptDict['02_majorlnkv']))

@@ -6,37 +6,18 @@ exports.PEExtractor = async(options) => {
     try {
         return new Promise((resolve, reject) => {
             PythonShell.run("analysePE.py",options).then(messages => {
-            const writeStream = fs.createWriteStream('./features/PEfeatures.csv');
-            const pathName = writeStream.path;
-            for(let i =0; i<FEATURES.length; i++) {
-                if(i == FEATURES.length-1) writeStream.write(`${FEATURES[i]}`);
-                else writeStream.write(`${FEATURES[i]};`)
-            }
-            writeStream.write('\n');
+            let featureValues = []
             if(messages[0] == "no PE file!") {
-                for(let i =0; i<FEATURES.length; i++) {
-                    if(i == FEATURES.length-1) writeStream.write(`0.0`);
-                    else writeStream.write(`0.0;`)
+                for(let i =0; i<messages.length; i++) {
+                    featureValues.push(0.0);
                 }
             }
             else {
                 for(let i =0; i<messages.length; i++) {
-                    if(i == messages.length-1) writeStream.write(`${messages[i]}`);
-                    else writeStream.write(`${messages[i]};`)
+                    featureValues.push(messages[i]);
                 }
             }
-            
-            writeStream.end();
-
-                writeStream.on('finish', () => {
-                    console.log(`wrote PE file data to .CSV successfully ${pathName}`);
-                    resolve(true);
-                });
-        
-                writeStream.on('error', (err) => {
-                    console.error(`Error writing PE file data ${pathName} => ${err}`);
-                    reject(false);
-                });
+            resolve(featureValues);
             });
     })
     }

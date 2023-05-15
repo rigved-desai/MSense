@@ -23,7 +23,7 @@ const FileUpload = () => {
         formData.append('file', file);
         setLoading(true);
         console.log(loading);
-        await axios.post("https://646165e5db1c4559989b7a1c--msenseserver.netlify.app/", formData)
+        await axios.post("http://localhost:3000", formData)
           .then((response) => {setResult(response.data);console.log(response.data)})
           .catch((error) => console.log(error));
           setLoading(false);

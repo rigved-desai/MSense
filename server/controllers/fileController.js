@@ -15,7 +15,6 @@ exports.featureExtractor = (req, res, next) => {
     var form = new formidable.IncomingForm();
     form.parse(req,  async(err, fields, files) => {
             path = files.file.filepath;
-            console.log(scriptDir);
             const options = {
                 args: [path],
                 scriptPath: scriptDir
@@ -33,10 +32,11 @@ exports.featureExtractor = (req, res, next) => {
                     })
             ])
             .then(([result1, result2]) => {
-                console.log(result1);
-                console.log(result2);
                 if (!result1) return fail(res); // update when byteExtractor is ready
-                else next();
+                else {
+                    req.featureValues = result1
+                    return next();
+                }
             })
             .catch(err => {
                 console.log('One of the functions failed: ', err);
