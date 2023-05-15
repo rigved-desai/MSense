@@ -7,8 +7,8 @@ exports.PEExtractor = async(options) => {
         return new Promise((resolve, reject) => {
             PythonShell.run("analysePE.py",options).then(messages => {
             let featureValues = []
-            console.log(messages)
-            if(messages[0] === "no PE file!" || "file too small!") {
+            if(messages[0] === "no PE file!" || messages[0] === "file too small!") {
+                console.log("Not working!")
                 for(let i =0; i<FEATURES.length; i++) {
                     featureValues.push(0.0);
                 }
@@ -18,6 +18,7 @@ exports.PEExtractor = async(options) => {
                     featureValues.push(messages[i]);
                 }
             }
+            console.log
             resolve(featureValues);
             });
     })
