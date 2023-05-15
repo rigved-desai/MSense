@@ -3,7 +3,7 @@ const modelPort = process.env.MODELPORT || 5000;
 
 exports.predictResult = async(req, res, next) =>  {
     const featureValues = JSON.stringify(req.featureValues);
-    // console.log(featureValues);
+    console.log(featureValues);
     axios.post(`https://msensemodelapi.onrender.com/predict`, featureValues)
         .then((response) => {
             let prediction = response.data.prediction;
