@@ -24,14 +24,9 @@ exports.featureExtractor = (req, res, next) => {
                     .catch(err => {
                         console.log('PEExtractor failed: ', err);
                         return false;
-                    }),
-                dataExtract.byteExtractor(path)
-                    .catch(err => {
-                        console.log('byteExtractor failed: ', err);
-                        return false;
                     })
             ])
-            .then(([result1, result2]) => {
+            .then(([result1]) => {
                 if (!result1) return fail(res); // update when byteExtractor is ready
                 else {
                     req.featureValues = result1
