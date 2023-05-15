@@ -13,6 +13,7 @@ exports.PEExtractor = async(options) => {
                 }
             }
             else {
+                console.log("PE Header exists!")
                 for(let i =0; i<messages.length; i++) {
                     featureValues.push(messages[i]);
                 }
