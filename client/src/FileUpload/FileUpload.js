@@ -23,7 +23,7 @@ const FileUpload = () => {
         formData.append('file', file);
         setLoading(true);
         console.log(loading);
-        await axios.post("https://msensemodelapi.onrender.com/", formData)
+        await axios.post("https://msense-server.onrender.com/check/", formData)
           .then((response) => {setResult(response.data);console.log(response.data)})
           .catch((error) => console.log(error));
           setLoading(false);
