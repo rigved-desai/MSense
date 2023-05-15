@@ -23,7 +23,7 @@ app.add_middleware(
 @app.post("/predict")
 async def predict(req: Request):
     print(os.getcwd())
-    with open('./modelapi/model.pickle', 'rb') as f: 
+    with open('./model.pickle', 'rb') as f: 
         model = pickle.load(f)
     data = await req.json()
     for i in range(len(data)):
