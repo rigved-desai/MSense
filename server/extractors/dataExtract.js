@@ -8,7 +8,7 @@ exports.PEExtractor = async(options) => {
             PythonShell.run("analysePE.py",options).then(messages => {
             let featureValues = []
             if(messages[0] == "no PE file!" || "file too small!") {
-                for(let i =0; i<messages.length; i++) {
+                for(let i =0; i<FEATURES.length; i++) {
                     featureValues.push(0.0);
                 }
             }
