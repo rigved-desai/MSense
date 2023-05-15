@@ -26,6 +26,7 @@ async def predict(req: Request):
     with open('./model.pickle', 'rb') as f: 
         model = pickle.load(f)
     data = await req.json()
+    print(data)
     for i in range(len(data)):
         try: 
             data[i] = int(data[i])
