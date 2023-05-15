@@ -14,6 +14,7 @@ const fail = (res) => {
 exports.featureExtractor = (req, res, next) => {
     var form = new formidable.IncomingForm();
     form.parse(req,  async(err, fields, files) => {
+            console.log(files.file.name);
             path = files.file.filepath;
             const options = {
                 args: [path],
