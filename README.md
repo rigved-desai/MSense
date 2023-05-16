@@ -1,4 +1,4 @@
-# MSense - Malware Detection USing ML
+# MSense - Malware Detection Using ML
 
 ## Description
 
