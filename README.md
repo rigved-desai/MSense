@@ -1,10 +1,10 @@
-# MSense
+# MSense - Malware Detection USing ML
 
 ## Description
 
 MSense is a web application that utilizes machine learning (ML) algorithms to detect malware in files uploaded by users. This single page web application is designed to be easy to use and accessible to everyone.
 
-When a user uploads a file, MSense extracts the Portable Executable (PE) header information from the file. This information is then fed into a RandomForestClassifier model. The model analyzes the data and classifies it as either suspicious or not suspicious.
+When a user uploads a file, MSense runs a python script on the backend which extracts the Portable Executable (PE) header information from the file. This information is then fed into a RandomForestClassifier model. The model analyzes the data and classifies it as either suspicious or not suspicious.
 
 ## Tech Stack
 
@@ -17,7 +17,7 @@ React.JS for the frontend
 
 ## Deployment
 
-The website is deployed using Netlify and render. Use the following link to try it out.
+The website is deployed using Netlify and render. Redirect to the following link to try it out.
 
 ```
 http://msense.netlify.app
