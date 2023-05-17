@@ -5,10 +5,14 @@ const cors = require('cors');
 require('dotenv').config()
 const fileUploadRouter = require("./routes/fileUploadRouter");
 app.use(cors());
+
+
+
 app.use("/", fileUploadRouter);
 
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
 
+//test api call
 app.get('/check', (req, res) => {
     res.json({ result: 'ok' });
 });

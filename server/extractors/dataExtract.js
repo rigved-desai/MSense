@@ -8,7 +8,6 @@ exports.PEExtractor = async(options) => {
             PythonShell.run("analysePE.py",options).then(messages => {
             let featureValues = []
             if(messages[0] === "no PE file!" || messages[0] === "file too small!") {
-                console.log("Not working!")
                 for(let i =0; i<FEATURES.length; i++) {
                     featureValues.push(0.0);
                 }
@@ -18,7 +17,6 @@ exports.PEExtractor = async(options) => {
                     featureValues.push(messages[i]);
                 }
             }
-            console.log
             resolve(featureValues);
             });
     })
@@ -29,7 +27,7 @@ exports.PEExtractor = async(options) => {
     }
 }
 
-// NEED TO CHANGE BELOW FUNCTION TO PROCESS THE BYTES AND CREATE A .CSV FILE
+// NEED TO CHANGE BELOW FUNCTION TO PROCESS THE BYTES AND ADD TO FEATURE VALUES
 
 exports.byteExtractor = async(path) => {
     try {

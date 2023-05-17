@@ -24,10 +24,9 @@ const FileUpload = () => {
         setLoading(true);
         console.log(loading);
         await axios.post("https://msense-server.onrender.com/", formData)
-          .then((response) => {setResult(response.data);console.log(response.data)})
+          .then((response) => {setResult(response.data)})
           .catch((error) => console.log(error));
           setLoading(false);
-          console.log(loading);
       }
 
     const displayResult = () => {
@@ -48,7 +47,6 @@ const FileUpload = () => {
                 );
             }
             else if(result.malware === false) {
-                console.log("OK");
                 return (
                 <>
                     <>

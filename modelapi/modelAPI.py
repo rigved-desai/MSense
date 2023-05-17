@@ -22,11 +22,12 @@ app.add_middleware(
 
 @app.post("/predict")
 async def predict(req: Request):
-    print(os.getcwd())
+
     with open('./model.pickle', 'rb') as f: 
         model = pickle.load(f)
+
     data = await req.json()
-    print(data)
+
     for i in range(len(data)):
         try: 
             data[i] = int(data[i])
@@ -36,8 +37,10 @@ async def predict(req: Request):
     data = np.asarray(data)
     data = data.reshape(1, -1)
     result = model.predict(data)
+    
     return {"prediction": int(result[0])}
 
+# test API call
 @app.get("/")
 async def ok():
     return {"hi": "hello"}
